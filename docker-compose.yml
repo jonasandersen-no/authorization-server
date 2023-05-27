@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   spillhuset-bot:
-    image: ghcr.io/notbjoggisatall/authorization-server:1.0-SNAPSHOT
+    image: ghcr.io/notbjoggisatall/authorization-server:1.0
     restart: always
     container_name: authorization-server
     environment:
