@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  spillhuset-bot:
+    image: ghcr.io/notbjoggisatall/authorization-server:1.0-SNAPSHOT
+    restart: always
+    container_name: authorization-server
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker,prod
+      - "VIRTUAL_HOST=login.bjoggis.com"
+      - "VIRTUAL_PORT=9000"
+      - "LETSENCRYPT_HOST=login.bjoggis.com"
+      - "LETSENCRYPT_EMAIL=jonas.bjorge.andersen@gmail.com"
+    networks:
+      - 'internal'
+networks:
+  internal:
+    external: true
+volumes:
+  utils:
+    external: true

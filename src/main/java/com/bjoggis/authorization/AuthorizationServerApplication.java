@@ -13,12 +13,12 @@ public class AuthorizationServerApplication {
     SpringApplication.run(AuthorizationServerApplication.class, args);
   }
 
-  @Bean
-  InMemoryUserDetailsManager inMemoryUserDetailsManager() {
-    return new InMemoryUserDetailsManager(
-        User.withDefaultPasswordEncoder()
-            .username("bjoggis")
-            .password("pw").build());
-  }
+//  @Bean
+//  InMemoryUserDetailsManager inMemoryUserDetailsManager() {
+//    return new InMemoryUserDetailsManager(
+//        User.withDefaultPasswordEncoder()
+//            .username("bjoggis")
+//            .password("pw").build());
+//  }
 
 }
