@@ -7,7 +7,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=docker,prod
       - "VIRTUAL_HOST=login.bjoggis.com"
-      - "VIRTUAL_PORT=9000"
+      - "VIRTUAL_PORT=8899"
       - "LETSENCRYPT_HOST=login.bjoggis.com"
       - "LETSENCRYPT_EMAIL=jonas.bjorge.andersen@gmail.com"
     networks:
