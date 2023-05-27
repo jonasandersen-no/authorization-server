@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   authorization-server:
-    image: ghcr.io/notbjoggisatall/authorization-server:1.0
+    image: ghcr.io/notbjoggisatall/authorization-server:1.0-SNAPSHOT
     restart: always
     container_name: authorization-server
     ports:
