@@ -1,9 +1,11 @@
 version: '3.8'
 services:
-  spillhuset-bot:
+  authorization-server:
     image: ghcr.io/notbjoggisatall/authorization-server:1.0
     restart: always
     container_name: authorization-server
+    ports:
+      - "8899:8899"
     environment:
       - SPRING_PROFILES_ACTIVE=docker,prod
       - "VIRTUAL_HOST=login.bjoggis.com"
