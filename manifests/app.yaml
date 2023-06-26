@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authorization-server-deployment
+  namespace: default
+  labels:
+    app: authorization-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authorization-server
+  template:
+    metadata:
+      labels:
+        app: authorization-server
+    spec:
+      containers:
+        - name: authorization-server-container
+          image: ghcr.io/notbjoggisatall/authorization-server:1.1
+          imagePullPolicy: Always
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+          ports:
+            - containerPort: 8899
+      imagePullSecrets:
+        - name: credentials
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: authorization-server-service
+spec:
+  selector:
+    app: authorization-server
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8899
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: authorization-server-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: login.bjoggis.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: authorization-server-service
+                port:
+                  number: 80
