@@ -9,7 +9,7 @@
   </parent>
   <groupId>com.bjoggis</groupId>
   <artifactId>authorization-server</artifactId>
-  <version>1.3-SNAPSHOT</version>
+  <version>1.4-SNAPSHOT</version>
   <name>authorization-server</name>
   <description>authorization-server</description>
   <properties>
