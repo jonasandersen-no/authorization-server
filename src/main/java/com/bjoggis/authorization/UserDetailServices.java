@@ -1,6 +1,6 @@
 package com.bjoggis.authorization;
 
-import com.bjoggis.authorization.model.Account;
+import com.bjoggis.authorization.entity.Account;
 import com.bjoggis.authorization.repository.AccountRepository;
 import java.util.ArrayList;
 import java.util.Collection;

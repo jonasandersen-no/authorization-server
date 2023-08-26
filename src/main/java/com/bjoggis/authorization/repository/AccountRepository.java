@@ -1,6 +1,6 @@
 package com.bjoggis.authorization.repository;
 
-import com.bjoggis.authorization.model.Account;
+import com.bjoggis.authorization.entity.Account;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

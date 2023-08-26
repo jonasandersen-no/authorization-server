@@ -1,4 +1,4 @@
-package com.bjoggis.authorization.model;
+package com.bjoggis.authorization.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
