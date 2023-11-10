@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: authorization-server-container
-          image: ghcr.io/notbjoggisatall/authorization-server:1.3
+          image: ghcr.io/notbjoggisatall/authorization-server:1.4
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
