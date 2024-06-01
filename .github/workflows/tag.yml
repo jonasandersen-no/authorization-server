@@ -52,16 +52,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: pull-arm64
-        uses: nick-fields/retry@v2
-        with:
-          timeout_minutes: 5
-          retry_wait_seconds: 60
-          max_attempts: 8
-          command: docker pull bjoggis/authorization-server:${{ github.ref_name }}-aarch_64
       - name: create-manifest
         run: |
           docker manifest create bjoggis/authorization-server:${{ github.ref_name }} --amend bjoggis/authorization-server:${{ github.ref_name }}-x86_64 --amend bjoggis/authorization-server:${{ github.ref_name }}-aarch_64
           docker manifest push bjoggis/authorization-server:${{ github.ref_name }}
           docker manifest create bjoggis/authorization-server:latest --amend bjoggis/authorization-server:${{ github.ref_name }}-x86_64 --amend bjoggis/authorization-server:${{ github.ref_name }}-aarch_64
           docker manifest push bjoggis/authorization-server:latest
+
