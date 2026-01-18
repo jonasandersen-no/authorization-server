@@ -67,7 +67,7 @@ jobs:
         run: |
           PROJECT_VERSION=${{ needs.build.outputs.projectVersion }}
           echo $PROJECT_VERSION
-          docker manifest create bjoggis/authorization-server:v$PROJECT_VERSION --amend bjoggis/authorization-server:v$PROJECT_VERSION-x86_64 --amend bjoggis/authorization-server:v$PROJECT_VERSION-aarch_64
-          docker manifest push bjoggis/authorization-server:v$PROJECT_VERSION
-          docker manifest create bjoggis/authorization-server:latest --amend bjoggis/authorization-server:v$PROJECT_VERSION-x86_64 --amend bjoggis/authorization-server:v$PROJECT_VERSION-aarch_64
+          docker manifest create bjoggis/authorization-server:$PROJECT_VERSION --amend bjoggis/authorization-server:$PROJECT_VERSION-x86_64 --amend bjoggis/authorization-server:$PROJECT_VERSION-aarch_64
+          docker manifest push bjoggis/authorization-server:$PROJECT_VERSION
+          docker manifest create bjoggis/authorization-server:latest --amend bjoggis/authorization-server:$PROJECT_VERSION-x86_64 --amend bjoggis/authorization-server:$PROJECT_VERSION-aarch_64
           docker manifest push bjoggis/authorization-server:latest
