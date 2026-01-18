@@ -78,7 +78,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <imageName>bjoggis/bgg-discord-bot:${project.version}-${os.detected.arch}</imageName>
+          <imageName>bjoggis/authorization-server:${project.version}-${os.detected.arch}</imageName>
         </configuration>
       </plugin>
     </plugins>
