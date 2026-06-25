@@ -15,7 +15,7 @@
   <name>authorization-server</name>
   <description>authorization-server</description>
   <properties>
-    <java.version>25</java.version>
+    <java.version>26</java.version>
     <spring-cloud.version>2025.1.2</spring-cloud.version>
   </properties>
   <dependencies>
